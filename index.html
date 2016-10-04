@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<title>Clede</title>
+</head>
+
+<body style="font-family:Consolas,Monaco,'Andale Mono',Courier,'Courier New';">
+
+<p id="demo">Lorem Ipsum dolor sit amet.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+<br />
+
+<a href='javascript: var = "hello"'
+class="myButton">This is a button</a>
+
+<h1>Checkboxes</h1>
+
+<form action="">
+<input type="checkbox" name="day" value="mon" id="mon">Mon<br>
+<input type="checkbox" name="day" value="tue" id="tue">Tue<br>
+<input type="checkbox" name="day" value="wed" id="wed">Wed<br>
+<input type="checkbox" name="day" value="thu" id="thu">Thu<br>
+<input type="checkbox" name="day" value="fri" id="fri">Fri<br>
+<input type="checkbox" name="day" value="sat" id="sat">Sat<br>
+<input type="checkbox" name="day" value="sun" id="sun">Sun<br>
+
+<button type="button" onclick="daily(true)">Daily</button>
+<button type="button" onclick="weekdays()">Weekdays</button>
+<button type="button" onclick="daily(false)">Clear</button>
+
+<select name="time zone">
+  <option value="-12:00">-12:00</option>
+  <option value="-11:00">-11:00</option>
+  <option value="-10:00">-10:00</option>
+  <option  value="-9:30"> -9:30 (Marquesas Islands)</option>
+  <option  value="-9:00"> -9:00</option>
+  <option  value="-8:00"> -8:00 (PST)</option>
+  <option  value="-7:00" selected> -7:00 (MST, PDT)</option>
+  <option  value="-6:00"> -6:00 (CST, MDT)</option>
+  <option  value="-5:00"> -5:00 (EST, CDT)</option>
+  <option  value="-4:00"> -4:00 (EDT)</option>
+  <option  value="-3:30"> -3:30 (Newfoundland)</option>
+  <option  value="-3:00"> -3:00</option>
+  <option  value="-2:00"> -2:00</option>
+  <option  value="-1:00"> -1:00</option>
+  <option    value="utc">   UTC</option>
+  <option  value="+1:00"> +1:00</option>
+  <option  value="+2:00"> +2:00</option>
+  <option  value="+3:00"> +3:00</option>
+  <option  value="+3:30"> +3:30 (Iran)</option>
+  <option  value="+4:00"> +4:00</option>
+  <option  value="+4:30"> +4:30 (Afghanistan)</option>
+  <option  value="+5:00"> +5:00</option>
+  <option  value="+5:30"> +5:30 (India, Sri Lanka)</option>
+  <option  value="+5:45"> +5:45 (Nepal)</option>
+  <option  value="+6:00"> +6:00</option>
+  <option  value="+6:30"> +6:30 (Myanmar, Cocos Islands)</option>
+  <option  value="+7:00"> +7:00</option>
+  <option  value="+8:00"> +8:00</option>
+  <option  value="+8:30"> +8:30 (North Korea)</option>
+  <option  value="+8:45"> +8:45 (Eyre Highway)</option>
+  <option  value="+9:00"> +9:00</option>
+  <option  value="+9:30"> +9:30 (Australia CST)</option>
+  <option value="+10:00">+10:00</option>
+  <option value="+10:30">+10:30 (Lord Howe Island)</option>
+  <option value="+11:00">+11:00</option>
+  <option value="+12:00">+12:00</option>
+  <option value="+12:45">+12:45 (Chatham Islands)</option>
+  <option value="+13:00">+13:00</option>
+  <option value="+14:00">+14:00</option>
+
+</select>
+
+</form>
+
+
+
+<script>
+
+/** Function to change the text in a paragraph. */
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+
+/** Automatically check the weekday checkboxes, and uncheck weekends. */
+function weekdays() {
+  var monFri = ["mon", "tue", "wed", "thu", "fri"];
+	var satSun = ["sat", "sun"];
+	
+	// Check weekdays.
+	for(var i = 0; i < monFri.length; i++) {
+	    document.getElementById(monFri[i]).checked = true;	
+	}
+
+	// Uncheck weekends.
+	for(var i = 0; i < satSun.length; i++) {
+	    document.getElementById(satSun[i]).checked = false;	
+	}
+}
+
+/** Automatically check or uncheck both weekday & weekend checkboxes. */
+function daily(checkStatus) {
+    var wholeWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+    for(var i = 0; i < wholeWeek.length; i++) {
+	    document.getElementById(wholeWeek[i]).checked = checkStatus;
+	}
+}
+
+</script>
+
+</body>
+
+</html>
